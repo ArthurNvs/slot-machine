@@ -11,4 +11,4 @@ SwiftUI Masterclass project
 </a>
 
 #
-This project is a module from the *SwiftUI Masterclass 2021 - iOS 15 App Development & Swift 5*.
+This project is a module from the *SwiftUI Masterclass 2021 - iOS 15 App Development & Swift 5*.# slot-machine
