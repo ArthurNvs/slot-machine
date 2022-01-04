@@ -12,8 +12,15 @@ struct ContentView: View {
       ZStack {
         // MARK: - BACKGROUND
         LinearGradient(gradient: Gradient(colors: [Color("ColorPink"), Color("ColorPurple")]), startPoint: .top, endPoint: .bottom).edgesIgnoringSafeArea(.all)
+        
         // MARK: - INTERFACE
-        Text("Hello")
+        VStack(alignment: .center, spacing: 5) {
+          // MARK: - HEADER
+          LogoView()
+          
+          // MARK: - SCORE
+          // MARK: - FOOTER
+        }
         
         // MARK: - POPUP
       } // ZStack

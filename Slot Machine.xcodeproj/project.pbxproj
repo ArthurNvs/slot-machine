@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E73CB0AA278486EE00C36BDC /* LogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73CB0A9278486EE00C36BDC /* LogoView.swift */; };
+		E73CB0AC2784876F00C36BDC /* Modifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73CB0AB2784876F00C36BDC /* Modifiers.swift */; };
 		E78322DC2763CAB700D1D18E /* Slot_MachineApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78322DB2763CAB700D1D18E /* Slot_MachineApp.swift */; };
 		E78322DE2763CAB700D1D18E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78322DD2763CAB700D1D18E /* ContentView.swift */; };
 		E78322E02763CAB900D1D18E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E78322DF2763CAB900D1D18E /* Assets.xcassets */; };
@@ -22,6 +24,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E73CB0A9278486EE00C36BDC /* LogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoView.swift; sourceTree = "<group>"; };
+		E73CB0AB2784876F00C36BDC /* Modifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modifiers.swift; sourceTree = "<group>"; };
 		E78322D82763CAB700D1D18E /* Slot Machine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Slot Machine.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E78322DB2763CAB700D1D18E /* Slot_MachineApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slot_MachineApp.swift; sourceTree = "<group>"; };
 		E78322DD2763CAB700D1D18E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -106,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				E78322DD2763CAB700D1D18E /* ContentView.swift */,
+				E73CB0A9278486EE00C36BDC /* LogoView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -113,6 +118,7 @@
 		E78322FB2763CE3400D1D18E /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				E73CB0AB2784876F00C36BDC /* Modifiers.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -195,7 +201,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E73CB0AC2784876F00C36BDC /* Modifiers.swift in Sources */,
 				E78322DE2763CAB700D1D18E /* ContentView.swift in Sources */,
+				E73CB0AA278486EE00C36BDC /* LogoView.swift in Sources */,
 				E78322DC2763CAB700D1D18E /* Slot_MachineApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
