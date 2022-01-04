@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
+  
     var body: some View {
       ZStack {
         // MARK: - BACKGROUND
@@ -91,6 +92,29 @@ struct ContentView: View {
           .layoutPriority(2)
           
           // MARK: - FOOTER
+          HStack {
+            // MARK: - BET 20
+            Button(action: {
+              print("Bet 20 coins")
+            }) {
+              Text("20")
+                .fontWeight(.heavy)
+                .foregroundColor(Color.white)
+                .font(.system(.title, design: .rounded))
+                .padding(.vertical, 5)
+                .frame(width: 90)
+                .shadow(color: Color("ColorTransparentBlack"), radius: 0, x: 0, y: 3)
+            }
+            .background(
+              Capsule()
+                .fill(LinearGradient(gradient: Gradient(colors: [Color("ColorPink"), Color("ColorPurple")]), startPoint: .top, endPoint: .bottom))
+            )
+            .padding(3)
+            .background(
+              Capsule()
+                .fill(LinearGradient(gradient: Gradient(colors: [Color("ColorPink"), Color("ColorPurple")]), startPoint: .bottom, endPoint: .top))
+            )
+          }
           
           Spacer()
         }
