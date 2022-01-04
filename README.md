@@ -1,4 +1,4 @@
-# Notes
+# Slot Machine
 SwiftUI Masterclass project
 
 - iPhone, iPad and Mac (with Catalyst framework)
@@ -7,7 +7,7 @@ SwiftUI Masterclass project
 - Input tools: Dictate, Scribble, Emoji, Type
 
 <a href="#">
-    <img align="center" width="50%" height="100%" src="slot-machine">
+    <img align="center" width="50%" height="100%" src="slot-machine.gif">
 </a>
 
 #
