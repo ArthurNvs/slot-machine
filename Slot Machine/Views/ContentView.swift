@@ -18,9 +18,63 @@ struct ContentView: View {
           // MARK: - HEADER
           LogoView()
           
+          Spacer()
+          
           // MARK: - SCORE
+          HStack {
+            HStack {
+              Text("Your\nCoins".uppercased())
+                .scoreLabelStyle()
+                .multilineTextAlignment(.trailing)
+              
+              Text("100")
+                .scoreNumberStyle()
+                .modifier(ScoreNumberModifier())
+            }
+            .modifier(ScoreContainerModifier())
+            
+            Spacer()
+            
+            HStack {
+              Text("200")
+                .scoreNumberStyle()
+                .modifier(ScoreNumberModifier())
+              
+              Text("Your\nCoins".uppercased())
+                .scoreLabelStyle()
+                .multilineTextAlignment(.leading)
+            }
+            .modifier(ScoreContainerModifier())
+          }
+          
+          // MARK: - SLOT MACHINE
           // MARK: - FOOTER
+          
+          Spacer()
         }
+        // MARK: - BUTTONS
+        .overlay(
+         // RESET
+          Button(action: {
+            print("Reset the Game")
+          }, label: {
+            Image(systemName: "arrow.2.circlepath.circle")
+          }) // Button
+          .modifier(ButtonModifier()),
+          alignment: .topLeading
+        )
+        .overlay(
+         // INFO
+          Button(action: {
+            print("Info View")
+          }, label: {
+            Image(systemName: "info.circle")
+          }) // Button
+          .modifier(ButtonModifier()),
+          alignment: .topTrailing
+        )
+        .padding()
+        .frame(maxWidth: 720)
         
         // MARK: - POPUP
       } // ZStack
