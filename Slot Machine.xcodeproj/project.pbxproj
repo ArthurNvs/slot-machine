@@ -23,6 +23,7 @@
 		E78322F82763CE1700D1D18E /* background-music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E78322F02763CE1700D1D18E /* background-music.mp3 */; };
 		E78F78A82784B8180055F40A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78F78A72784B8180055F40A /* Extensions.swift */; };
 		E78F78AA2784BDCC0055F40A /* ReelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78F78A92784BDCC0055F40A /* ReelView.swift */; };
+		E7A20ED22785B5D30053BA1B /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A20ED12785B5D30053BA1B /* InfoView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		E78322FC2763CEFD00D1D18E /* Slot-Machine-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Slot-Machine-Info.plist"; sourceTree = SOURCE_ROOT; };
 		E78F78A72784B8180055F40A /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		E78F78A92784BDCC0055F40A /* ReelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReelView.swift; sourceTree = "<group>"; };
+		E7A20ED12785B5D30053BA1B /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,7 +81,6 @@
 				E78322FC2763CEFD00D1D18E /* Slot-Machine-Info.plist */,
 				E78322FA2763CE2900D1D18E /* Views */,
 				E78322FB2763CE3400D1D18E /* Helpers */,
-				E78322F92763CE1F00D1D18E /* Sounds */,
 				E78322DB2763CAB700D1D18E /* Slot_MachineApp.swift */,
 				E78322DF2763CAB900D1D18E /* Assets.xcassets */,
 				E78322E12763CAB900D1D18E /* Preview Content */,
@@ -116,6 +117,7 @@
 				E78322DD2763CAB700D1D18E /* ContentView.swift */,
 				E73CB0A9278486EE00C36BDC /* LogoView.swift */,
 				E78F78A92784BDCC0055F40A /* ReelView.swift */,
+				E7A20ED12785B5D30053BA1B /* InfoView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -125,6 +127,7 @@
 			children = (
 				E73CB0AB2784876F00C36BDC /* Modifiers.swift */,
 				E78F78A72784B8180055F40A /* Extensions.swift */,
+				E78322F92763CE1F00D1D18E /* Sounds */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -213,6 +216,7 @@
 				E78322DE2763CAB700D1D18E /* ContentView.swift in Sources */,
 				E73CB0AA278486EE00C36BDC /* LogoView.swift in Sources */,
 				E78322DC2763CAB700D1D18E /* Slot_MachineApp.swift in Sources */,
+				E7A20ED22785B5D30053BA1B /* InfoView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
