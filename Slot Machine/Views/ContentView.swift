@@ -13,6 +13,25 @@ struct ContentView: View {
   @State private var reels = [0, 1, 2]
   @State private var showingInfoView = false
   
+  // MARK: - FUNCTIONS
+  
+  // SPIN REELS
+  func spinReels() {
+    reels[0] = Int.random(in: 0...symbols.count - 1)
+    reels[1] = Int.random(in: 0...symbols.count - 1)
+    reels[2] = Int.random(in: 0...symbols.count - 1)
+  }
+  
+  // CHECK WINNING
+  
+  // PLAYER WINS
+  
+  // NEW HIGH SCORE
+  
+  // PLAYER LOSE
+  
+  // GAME IS OVER
+  
   var body: some View {
     ZStack {
       // MARK: - BACKGROUND
@@ -85,7 +104,7 @@ struct ContentView: View {
           
           // MARK: - SPIN BUTTON
           Button(action: {
-            print("Spin the reels")
+            self.spinReels()
           }, label: {
             Image("gfx-spin")
               .renderingMode(.original)
