@@ -17,7 +17,7 @@ struct ContentView: View {
   @State private var showingInfoView = false
   @State private var isActiveBet10 = true
   @State private var isActiveBet20 = false
-  @State private var showingModal = true
+  @State private var showingModal = false
   
   // MARK: - FUNCTIONS
   
@@ -256,6 +256,24 @@ struct ContentView: View {
                 .multilineTextAlignment(.center)
                 .foregroundColor(Color.gray)
                 .layoutPriority(1)
+              
+              Button(action: {
+                self.showingModal = false
+                self.coins = 100
+              }) {
+                Text("New Game".uppercased())
+                  .font(.system(.body, design: .rounded))
+                  .fontWeight(.semibold)
+                  .accentColor(Color("ColorPink"))
+                  .padding(.horizontal, 12)
+                  .padding(.vertical, 8)
+                  .frame(minWidth: 128)
+                  .background(
+                    Capsule()
+                      .strokeBorder(lineWidth: 1.75)
+                      .foregroundColor(Color("ColorPink"))
+                  )
+              }
             }
             
             Spacer()
