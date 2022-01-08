@@ -10,6 +10,9 @@ import SwiftUI
 struct ContentView: View {
   let symbols = ["gfx-bell", "gfx-cherry", "gfx-coin", "gfx-grape", "gfx-seven", "gfx-strawberry"]
   
+  @State private var highscore = 0
+  @State private var coins = 100
+  @State private var betAmount = 10
   @State private var reels = [0, 1, 2]
   @State private var showingInfoView = false
   
@@ -27,12 +30,27 @@ struct ContentView: View {
   
   func checkWinning() {
     if reels[0] == reels[1] && reels[1] == reels[2] && reels[0] == reels[2] {
-      // PLAYER WINS
+      playerWins()
+      newHighScore()
       
-      // NEW HIGH SCORE
+      if coins > highscore {
+        newHighScore()
+      }
     } else {
-      // PLAYER LOSE
+      playerLoses()
     }
+  }
+  
+  func playerWins() {
+    coins += betAmount * 10
+  }
+  
+  func newHighScore() {
+    highscore = coins
+  }
+  
+  func playerLoses() {
+    coins -= betAmount
   }
   
   // GAME IS OVER
@@ -56,7 +74,7 @@ struct ContentView: View {
               .scoreLabelStyle()
               .multilineTextAlignment(.trailing)
             
-            Text("100")
+            Text("\(coins)")
               .scoreNumberStyle()
               .modifier(ScoreNumberModifier())
           }
@@ -65,11 +83,11 @@ struct ContentView: View {
           Spacer()
           
           HStack {
-            Text("200")
+            Text("\(highscore)")
               .scoreNumberStyle()
               .modifier(ScoreNumberModifier())
             
-            Text("Your\nCoins".uppercased())
+            Text("High\nScore".uppercased())
               .scoreLabelStyle()
               .multilineTextAlignment(.leading)
           }
