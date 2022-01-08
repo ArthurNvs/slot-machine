@@ -15,20 +15,25 @@ struct ContentView: View {
   
   // MARK: - FUNCTIONS
   
-  // SPIN REELS
   func spinReels() {
-    reels[0] = Int.random(in: 0...symbols.count - 1)
-    reels[1] = Int.random(in: 0...symbols.count - 1)
-    reels[2] = Int.random(in: 0...symbols.count - 1)
+    //reels[0] = Int.random(in: 0...symbols.count - 1)
+    //reels[1] = Int.random(in: 0...symbols.count - 1)
+    //reels[2] = Int.random(in: 0...symbols.count - 1)
+    
+    reels = reels.map({ _ in
+      Int.random(in: 0...symbols.count - 1)
+    })
   }
   
-  // CHECK WINNING
-  
-  // PLAYER WINS
-  
-  // NEW HIGH SCORE
-  
-  // PLAYER LOSE
+  func checkWinning() {
+    if reels[0] == reels[1] && reels[1] == reels[2] && reels[0] == reels[2] {
+      // PLAYER WINS
+      
+      // NEW HIGH SCORE
+    } else {
+      // PLAYER LOSE
+    }
+  }
   
   // GAME IS OVER
   
@@ -105,6 +110,8 @@ struct ContentView: View {
           // MARK: - SPIN BUTTON
           Button(action: {
             self.spinReels()
+            
+            self.checkWinning()
           }, label: {
             Image("gfx-spin")
               .renderingMode(.original)
