@@ -75,6 +75,13 @@ struct ContentView: View {
     }
   }
   
+  func resetGame() {
+    UserDefaults.standard.set(0, forKey: "HighScore")
+    highscore = 0
+    coins = 100
+    activateBet10()
+  }
+  
   var body: some View {
     ZStack {
       // MARK: - BACKGROUND
@@ -206,7 +213,7 @@ struct ContentView: View {
       .overlay(
         // RESET
         Button(action: {
-          print("Reset the Game")
+          self.resetGame()
         }, label: {
           Image(systemName: "arrow.2.circlepath.circle")
         }) // Button
