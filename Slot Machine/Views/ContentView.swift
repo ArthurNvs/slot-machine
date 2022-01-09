@@ -18,9 +18,9 @@ struct ContentView: View {
   @State private var isActiveBet10 = true
   @State private var isActiveBet20 = false
   @State private var showingModal = false
+  @State private var animatingSymbol = false
   
   // MARK: - FUNCTIONS
-  
   func spinReels() {
     //reels[0] = Int.random(in: 0...symbols.count - 1)
     //reels[1] = Int.random(in: 0...symbols.count - 1)
@@ -122,6 +122,7 @@ struct ContentView: View {
         }
         
         // MARK: - SLOT MACHINE
+        
         VStack(alignment: .center, spacing: 0) {
           // MARK: - REEL #1
           ZStack {
@@ -129,6 +130,12 @@ struct ContentView: View {
             Image(symbols[reels[0]])
               .resizable()
               .modifier(ImageModifier())
+              .opacity(animatingSymbol ? 1 : 0)
+              .offset(y: animatingSymbol ? 0 : -50)
+              .animation(.easeOut(duration: Double.random(in: 0.5...0.7)), value: animatingSymbol)
+              .onAppear(perform: {
+                self.animatingSymbol.toggle()
+              })
           } // ZStack
           
           HStack(alignment: .center, spacing: 0) {
@@ -138,6 +145,12 @@ struct ContentView: View {
               Image(symbols[reels[1]])
                 .resizable()
                 .modifier(ImageModifier())
+                .opacity(animatingSymbol ? 1 : 0)
+                .offset(y: animatingSymbol ? 0 : -50)
+                .animation(.easeOut(duration: Double.random(in: 0.5...0.9)), value: animatingSymbol)
+                .onAppear(perform: {
+                  self.animatingSymbol.toggle()
+                })
             } // ZStack
             
             Spacer()
@@ -148,16 +161,36 @@ struct ContentView: View {
               Image(symbols[reels[2]])
                 .resizable()
                 .modifier(ImageModifier())
+                .opacity(animatingSymbol ? 1 : 0)
+                .offset(y: animatingSymbol ? 0 : -50)
+                .animation(.easeOut(duration: Double.random(in: 0.9...1.5)), value: animatingSymbol)
+                .onAppear(perform: {
+                  self.animatingSymbol.toggle()
+                })
             } // ZStack
           }
           .frame(maxWidth: 500)
           
           // MARK: - SPIN BUTTON
           Button(action: {
+            // 1. Set default state: no animation
+            withAnimation {
+              self.animatingSymbol = false
+            }
+            
+            // 2. Spin the reels changing symbols
             self.spinReels()
             
+            // 3. Trigger animation after changing symbols
+            withAnimation {
+              self.animatingSymbol = true
+            }
+            
+            // 4. Check Winning
             self.checkWinning()
             
+            
+            // 5. Game is over
             self.isGameOver()
           }, label: {
             Image("gfx-spin")
