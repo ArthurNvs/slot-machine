@@ -19,6 +19,7 @@ struct ContentView: View {
   @State private var isActiveBet20 = false
   @State private var showingModal = false
   @State private var animatingSymbol = false
+  @State private var animatingModal = false
   
   // MARK: - FUNCTIONS
   func spinReels() {
@@ -219,14 +220,18 @@ struct ContentView: View {
             
             Image("gfx-casino-chips")
               .resizable()
+              .offset(x: isActiveBet20 ? 0 : 20)
               .opacity(isActiveBet20 ? 1 : 0)
               .modifier(CasinoChipsModifier())
           }
+          
+          Spacer()
           
           // MARK: - BET 10
           HStack(alignment: .center, spacing: 10) {
             Image("gfx-casino-chips")
               .resizable()
+              .offset(x: isActiveBet10 ? 0 : -20)
               .opacity(isActiveBet10 ? 1 : 0)
               .modifier(CasinoChipsModifier())
             
@@ -300,6 +305,8 @@ struct ContentView: View {
               
               Button(action: {
                 self.showingModal = false
+                self.animatingModal = false
+                self.activateBet10()
                 self.coins = 100
               }) {
                 Text("New Game".uppercased())
@@ -322,6 +329,12 @@ struct ContentView: View {
             .background(Color.white)
             .cornerRadius(20)
             .shadow(color: Color("ColorTransparentBlack"), radius: 6, x: 0, y: 8)
+            .opacity($animatingModal.wrappedValue ? 1 : 0)
+            .offset(y: $animatingModal.wrappedValue ? 0 : -100)
+            .animation(Animation.spring(response: 0.6, dampingFraction: 1.0, blendDuration: 1.0), value: animatingModal)
+            .onAppear(perform: {
+              self.animatingModal = true
+            })
         }
       }
     } // ZStack
