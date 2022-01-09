@@ -289,7 +289,7 @@ struct ContentView: View {
       // MARK: - POPUP
       if $showingModal.wrappedValue {
         ZStack {
-          Color("CollorTransparentBlack").edgesIgnoringSafeArea(.all)
+          Color("ColorTransparentBlack").edgesIgnoringSafeArea(.all)
           
           // MODAL
           VStack(spacing: 0) {

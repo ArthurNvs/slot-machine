@@ -24,7 +24,7 @@ struct InfoView: View {
           FormRowView(firstItem: "Designer", secondItem: "Robert Petras")
           FormRowView(firstItem: "Music", secondItem: "Dan Lebowitz")
           FormRowView(firstItem: "Website", secondItem: "swiftuimasterclass.com")
-          FormRowView(firstItem: "Copyright", secondItem: "© 2020 All rights reserved.")
+          FormRowView(firstItem: "Copyright", secondItem: "© 2022 All rights reserved.")
           FormRowView(firstItem: "Version", secondItem: "1.0.0")
         }
       }
